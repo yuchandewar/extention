@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Freepik Icon Downloader",
+  "version": "1.0",
+  "description": "Download PNG icons directly from Freepik search results.",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.freepik.com/*",
+    "https://cdn-icons-png.freepik.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.freepik.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

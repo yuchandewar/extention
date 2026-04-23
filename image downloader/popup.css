@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --primary: #106BDA;
+    --primary-light: #5EB2FC;
+    --bg: #ffffff;
+    --text: #1F2937;
+    --text-light: #6B7280;
+    --card-bg: #f9fafb;
+}
+
+body {
+    width: 320px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+.container {
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.logo span {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.status-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #E5E7EB;
+    margin-bottom: 24px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.status-indicator.active {
+    background: #10B981;
+}
+
+.status-indicator.active::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.status-title {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+}
+
+.status-desc {
+    font-size: 12px;
+    color: var(--text-light);
+    margin: 4px 0 0 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #E5E7EB;
+    color: var(--text);
+}
+
+.btn.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #0d56ad;
+    box-shadow: 0 4px 12px rgba(16, 107, 218, 0.25);
+}
+
+footer {
+    margin-top: 24px;
+    text-align: center;
+    border-top: 1px solid #F3F4F6;
+    padding-top: 16px;
+}
+
+footer p {
+    font-size: 10px;
+    color: var(--text-light);
+    margin: 0;
+}
