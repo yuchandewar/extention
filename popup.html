@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps Lead Pro</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">📍</span>
+                <h1>MapsLead<span>Pro</span></h1>
+            </div>
+            <div class="status-badge" id="statusBadge">Idle</div>
+        </header>
+
+        <main>
+            <section class="config">
+                <div class="input-group">
+                    <label for="categories">Business Niches</label>
+                    <input type="text" id="categories" placeholder="e.g. Plumbers, Dentists, Gyms" value="Plumbers">
+                    <small>Comma separated</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="locations">Target Locations</label>
+                    <input type="text" id="locations" placeholder="e.g. London, New York, Texas" value="London">
+                    <small>City, Region, State, or Country</small>
+                </div>
+
+                <div class="controls">
+                    <button id="startBtn" class="primary">Start Extraction</button>
+                    <button id="stopBtn" class="secondary" disabled>Stop</button>
+                </div>
+            </section>
+
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-info">
+                    <span id="currentSearch">Ready to start...</span>
+                    <span id="leadsCount">0 leads found</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <span class="stat-label">Total Leads</span>
+                    <span class="stat-value" id="totalLeads">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Queries</span>
+                    <span class="stat-value" id="queriesCompleted">0/0</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <button id="exportCsvBtn" class="outline" disabled>Download CSV</button>
+            <button id="clearBtn" class="text-btn">Clear Data</button>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
